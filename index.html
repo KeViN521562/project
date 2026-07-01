@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags for proper rendering and touch zooming -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS from CDN for rapid UI development -->
+    <!-- Using the latest stable version as of 2024 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS for any additional styling not covered by Tailwind utilities -->
+    <style>
+        /* Custom utility classes for consistent spacing and transitions */
+        .transition-all {
+            transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+
+        /* Custom focus states for accessibility */
+        .focus-visible:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* Custom scrollbar for better UX on webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #94a3b8;
+        }
+    </style>
+
+    <!-- Page title and metadata for SEO and accessibility -->
+    <title>Portfolio - Python Automation & Web Development Specialist</title>
+    <meta name="description" content="Professional portfolio showcasing expertise in Python automation, data scraping, and web development">
+    <meta name="author" content="Developer Portfolio">
+    <meta name="keywords" content="Python, automation, data scraping, web development, portfolio">
+
+    <!-- Favicon placeholder (replace with actual favicon.ico) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="font-sans antialiased bg-gray-50 text-gray-900">
+    <!--
+        Page Structure Overview:
+        =======================
+        This single-page portfolio follows a modular section-based architecture:
+        1. Hero Section - Introduction and primary call-to-action
+        2. About Section - Skills, experience, and professional background
+        3. Projects Section - Portfolio showcase (placeholder for dynamic content)
+        4. Contact Section - Contact form and contact information
+
+        Design System:
+        - Uses Tailwind CSS utility-first approach for rapid, consistent styling
+        - Responsive design with mobile-first breakpoints (sm:640px, md:768px, lg:1024px, xl:1280px)
+        - Color palette: Slate/blue-gray theme with blue accent for interactivity
+        - Typography: System font stack for optimal performance and readability
+        - Spacing: 4px-based scale for consistent vertical/horizontal rhythm
+        - Elevation: Subtle shadows for depth perception
+        - Transitions: Smooth micro-interactions for enhanced UX
+    -->
+
+    <!-- ===== HERO SECTION ===== -->
+    <!-- Purpose: Primary introduction with clear value proposition and primary CTA -->
+    <section class="relative min-h-[80vh] flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white/80 px-6 py-20 sm:py-24">
+        <!-- Subtle decorative pattern -->
+        <div class="absolute inset-0 pointer-events-none">
+            <svg class="w-full h-full text-gray-100/50" viewBox="0 0 1440 320">
+                <path fill="currentColor" d="M0,160L48,170.7C96,181,192,203,288,208C384,213,480,203,576,176C672,149,768,106,864,96C960,86,1056,106,1152,112C1248,117,1344,107,1392,96L1440,80L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,0,320Z"></path>
+            </svg>
+        </div>
+
+        <!-- Content container with max-width for readability on large screens -->
+        <div class="relative z-10 text-center space-y-6 max-w-2xl">
+            <!-- Hero headline with gradient text for modern appearance -->
+            <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-cyan-600 sm:text-5xl lg:text-6xl">
+                Python Automation & Data Engineering Specialist
+            </h1>
+
+            <!-- Sub-headline providing context and value proposition -->
+            <p class="max-w-xl text-lg text-gray-600 lg:text-xl">
+                Building scalable automation solutions and data-driven applications that transform raw data into actionable insights. Expert in web scraping, API integration, and full-stack development.
+            </p>
+
+            <!-- Primary and secondary call-to-action buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects"
+                   class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all transform hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none">
+                    View Projects
+                </a>
+                <a href="#contact"
+                   class="px-6 py-3 border border-indigo-300 text-indigo-600 rounded-lg hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all transform hover:-translate-y-0.5 hover:shadow-sm">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <!-- Purpose: Detailed professional background, skills, and expertise presentation -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 space-y-12">
+            <!-- Section header with visual separator -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">About Me</h2>
+                <div class="w-24 h-0.5 mx-auto mt-2 bg-gradient-to-r from-indigo-500 to-cyan-500"></div>
+            </div>
+
+            <!-- Two-column layout for image and content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start lg:items-center">
+                <!-- Professional portrait placeholder -->
+                <div class="relative">
+                    <div class="w-48 h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center overflow-hidden shadow-lg">
+                        <svg class="w-20 h-20 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></path>
+                        </svg>
+                    </div>
+                    <!-- Optional decorative badge -->
+                    <div class="absolute -top-2 -right-2 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-bold shadow-md">
+                        Expert
+                    </div>
+                </div>
+
+                <!-- Professional description and skills -->
+                <div class="space-y-6">
+                    <p class="text-gray-600 leading-relaxed">
+                        I'm a passionate software developer specializing in Python-based automation solutions, data extraction pipelines, and modern web applications. With a strong foundation in both back-end systems and front-end technologies, I deliver end-to-end solutions that solve complex business problems through clean, maintainable code.
+                    </p>
+
+                    <!-- Technical skills categorized for easy scanning -->
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                            Technical Expertise
+                        </h3>
+
+                        <!-- Skills displayed as responsive badges -->
+                        <div class="flex flex-wrap gap-2">
+                            <!-- Python & Backend -->
+                            <span class="px-3 py-1 bg-blue-50 text-blue-800 text-sm font-medium rounded-full border border-blue-200">Python</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-800 text-sm font-medium rounded-full border border-blue-200">FastAPI</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-800 text-sm font-medium rounded-full border border-blue-200">Django</span>
+                            <span class="px-3 py-1 bg-blue-50 text-blue-800 text-sm font-medium rounded-full border border-blue-200">AsyncIO</span>
+
+                            <!-- Data & Automation -->
+                            <span class="px-3 py-1 bg-green-50 text-green-800 text-sm font-medium rounded-full border border-green-200">Data Scraping</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-800 text-sm font-medium rounded-full border border-green-200">BeautifulSoup</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-800 text-sm font-medium rounded-full border border-green-200">Scrapy</span>
+                            <span class="px-3 py-1 bg-green-50 text-green-800 text-sm font-medium rounded-full border border-green-200">Pandas</span>
+
+                            <!-- Frontend & Web -->
+                            <span class="px-3 py-1 bg-purple-50 text-purple-800 text-sm font-medium rounded-full border border-purple-200">HTML5</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-800 text-sm font-medium rounded-full border border-purple-200">CSS3/Tailwind</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-800 text-sm font-medium rounded-full border border-purple-200">JavaScript</span>
+                            <span class="px-3 py-1 bg-purple-50 text-purple-800 text-sm font-medium rounded-full border border-purple-200">React</span>
+
+                            <!-- Tools & Infrastructure -->
+                            <span class="px-3 py-1 bg-gray-50 text-gray-800 text-sm font-medium rounded-full border border-gray-200">Git</span>
+                            <span class="px-3 py-1 bg-gray-50 text-gray-800 text-sm font-medium rounded-full border border-gray-200">Docker</span>
+                            <span class="px-3 py-1 bg-gray-50 text-gray-800 text-sm font-medium rounded-full border border-gray-200">Linux</span>
+                            <span class="px-3 py-1 bg-gray-50 text-gray-800 text-sm font-medium rounded-full border border-gray-200">SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional highlights/metrics -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t pt-6">
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-indigo-600">5+</p>
+                            <p class="text-sm text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-indigo-600">50+</p>
+                            <p class="text-sm text-gray-600">Projects Delivered</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-indigo-600">100%</p>
+                            <p class="text-sm text-gray-600">Client Satisfaction</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-2xl font-bold text-indigo-600">24/7</p>
+                            <p class="text-sm text-gray-600">Support Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- Purpose: Showcase of notable projects with placeholder content for future population -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 space-y-12">
+            <!-- Section header -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Featured Projects</h2>
+                <div class="w-24 h-0.5 mx-auto mt-2 bg-gradient-to-r from-indigo-500 to-cyan-500"></div>
+            </div>
+
+            <!-- Project grid - responsive layout -->
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Project Card Template (Duplicate for additional projects) -->
+                <div class="group">
+                    <!-- Card container with hover effects -->
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <!-- Project image placeholder -->
+                        <div class="w-full h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+                            <div class="text-center text-indigo-400 space-y-2">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                                <p class="text-sm font-medium">Project Preview</p>
+                            </div>
+                        </div>
+
+                        <!-- Project content -->
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                                Data Extraction Automation Platform
+                            </h3>
+                            <p class="text-gray-600 line-clamp-3">
+                                Built a scalable web scraping system using Python, Selenium, and BeautifulSoup to extract structured data from 50+ e-commerce websites. Delivered clean CSV/JSON outputs with error handling and scheduling capabilities.
+                            </p>
+
+                            <!-- Technology tags -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Scrapy</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Selenium</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Pandas</span>
+                            </div>
+
+                            <!-- Project links -->
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="#"
+                                   class="px-3 py-1.5 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    View Code
+                                </a>
+                                <a href="#"
+                                   class="px-3 py-1.5 border border-indigo-300 text-indigo-600 text-sm rounded hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional project cards would go here - using same structure -->
+                <div class="group">
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div class="w-full h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+                            <div class="text-center text-indigo-400 space-y-2">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M3 3l18 18"></path>
+                                    <path d="M9 9v11a1 1 0 001 1h2a1 1 0 001-1V9a5 5 0 00-7.5-4H9"></path>
+                                </svg>
+                                <p class="text-sm font-medium">Project Preview</p>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                                Real-time Analytics Dashboard
+                            </h3>
+                            <p class="text-gray-600 line-clamp-3">
+                                Developed a dynamic dashboard using Python Flask and Chart.js that visualizes real-time data streams from IoT sensors. Features include customizable widgets, data export capabilities, and responsive design for monitoring on any device.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Flask</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Chart.js</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">WebSockets</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="#"
+                                   class="px-3 py-1.5 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    View Code
+                                </a>
+                                <a href="#"
+                                   class="px-3 py-1.5 border border-indigo-300 text-indigo-600 text-sm rounded hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-all duration-300">
+                        <div class="w-full h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+                            <div class="text-center text-indigo-400 space-y-2">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg>
+                                <p class="text-sm font-medium">Project Preview</p>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+                                API Integration Suite
+                            </h3>
+                            <p class="text-gray-600 line-clamp-3">
+                                Created a comprehensive API integration layer that connects multiple third-party services (payment processors, CRM systems, social media platforms) through a unified interface. Includes rate limiting, retry mechanisms, and comprehensive logging.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Python</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">FastAPI</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">REST APIs</span>
+                                <span class="px-2 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Webhooks</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="#"
+                                   class="px-3 py-1.5 bg-indigo-600 text-white text-sm rounded hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    View Code
+                                </a>
+                                <a href="#"
+                                   class="px-3 py-1.5 border border-indigo-300 text-indigo-600 text-sm rounded hover:bg-indigo-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-colors">
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action for viewing more projects -->
+            <div class="text-center mt-8">
+                <a href="#"
+                   class="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all transform hover:-translate-y-0.5 hover:shadow-lg">
+                    View All Projects
+                    <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <!-- Purpose: Facilitate visitor contact through form and direct contact information -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 space-y-12">
+            <!-- Section header -->
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">Get In Touch</h2>
+                <div class="w-24 h-0.5 mx-auto mt-2 bg-gradient-to-r from-indigo-500 to-cyan-500"></div>
+            </div>
+
+            <!-- Two-column layout: contact form and contact info -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Send Me a Message</h3>
+                    <p class="text-gray-600 mb-6">I'm always new project, collaboration opportunity, or just to say hello - I'd love to hear from you!</p>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <!-- Name field -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all disabled:opacity-50"
+                                   placeholder="Enter your full name" required>
+                        </div>
+
+                        <!-- Email field -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all disabled:opacity-50"
+                                   placeholder="your.email@example.com" required>
+                        </div>
+
+                        <!-- Subject field -->
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all disabled:opacity-50"
+                                   placeholder="Brief description of your inquiry" required>
+                        </div>
+
+                        <!-- Message field -->
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all disabled:opacity-50 resize-y"
+                                      placeholder="Please provide details about your project or inquiry..." required></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div>
+                            <button type="submit"
+                                    class="w-full px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all transform hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-50 disabled:pointer-events-none">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold text-gray-800">Contact Information</h3>
+
+                    <!-- Contact items -->
+                    <div class="space-y-4">
+                        <!-- Email -->
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Email</p>
+                                <a href="mailto:hello@example.com"
+                                   class="text-indigo-600 hover:text-indigo-800 hover:underline">
+                                    hello@example.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Phone</p>
+                                <a href="tel:+1234567890"
+                                   class="text-indigo-600 hover:text-indigo-800 hover:underline">
+                                    +1 (234) 567-890
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                    <path d="M12 16v-4"></path>
+                                    <path d="M12 8v.01"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Location</p>
+                                <p class="text-indigo-600 hover:text-indigo-800 hover:underline">Remote - Available Worldwide</p>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">Availability</p>
+                                <p class="text-indigo-600 hover:text-indigo-800 hover:underline">Open for New Projects</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social links -->
+                    <div class="mt-6">
+                        <p class="text-sm font-medium text-gray-700 mb-2">Let's Connect</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#"
+                               class="w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-800 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="#"
+                               class="w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-800 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                                </svg>
+                            </a>
+                            <a href="#"
+                               class="w-10 h-10 flex items-center justify-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-800 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                                    <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.734-.715-1.608-2.377-2.734-4.312-2.734-2.589 0-4.688 2.015-4.688 4.5v17.107c0 .425.348.773.78.794h4.125c.208 0 .424.07.583.195.302.237.468.594.347.98.27-.466.045-.787-.09-1.066l-.23-.452c-.253-.496-.666-1.212-1.285-1.783-.619-.571-1.494-1.076-2.47-1.283l-.578-.129c-2.974-.13-3.28.89-2.97 1.938.438 1.471 1.526 2.797 2.698 3.33.548.242 1.104.262 1.616.12l.89-.233c.859-.203 1.676-.543 2.282-.998.606-.456 1.184-1.009 1.558-1.663l.214-.385c.305-.55.212-1.152-.074-1.649z"></path>
+                                    <path d="M9.042 15.253a1.461 1.461 0 001.288-.818l1.246-.73 1.44.83c.208.12.329.324.259.533-.078.218-.292.35-.497.363-.57.033-1.085-.102-1.48-.35z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <!-- Purpose: Copyright information and secondary links -->
+    <footer class="border-t border-gray-200 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>&copy; <span id="current-year"></span> Portfolio. All rights reserved.</p>
+            <div class="mt-4 space-x-4 text-gray-400 hover:text-gray-500">
+                <a href="#">Privacy Policy</a>
+                <span aria-hidden="true">•</span>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+        JavaScript Section:
+        ===================
+        Client-side enhancements for improved user experience:
+        1. Dynamic year update for copyright footer
+        2. Form validation and submission handling (placeholder)
+        3. Smooth scrolling for anchor links
+        4. Accessibility enhancements
+    -->
+    <script>
+        // Update copyright year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Form submission handling (placeholder - would connect to backend in production)
+        const contactForm = document.querySelector('form[action="#"]');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // In a real application, this would send data to a backend service
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced focus visibility for keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('user-is-tabbing');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('user-is-tabbing');
+        });
+
+        // Add focus-visible class for custom focus styles
+        document.addEventListener('focusin', function(e) {
+            if (document.body.classList.contains('user-is-tabbing')) {
+                e.target.classList.add('focus-visible');
+            }
+        });
+
+        document.addEventListener('focusout', function(e) {
+            e.target.classList.remove('focus-visible');
+        });
+    </script>
+</body>
+</html>
